@@ -1,0 +1,59 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"); */
+
+@font-face {
+  font-family: 'Sans';
+  src: local('IRANSans-web'),
+       url('../public/assets/fonts/IRANSans-web.woff') format('woff'),
+       url('../public/assets/fonts/IRANSans-web.woff2') format('woff2');
+};
+
+@font-face {
+  font-family: 'SansM';
+  src: local('IRANSans-Medium-web'),
+       url('../public/assets/fonts/IRANSans-Medium-web.woff') format('woff'),
+       url('../public/assets/fonts/IRANSans-Medium-web.woff2') format('woff2');
+};
+
+html,
+body,
+#root{
+  height: 100%;
+  width: 100%;
+  font-family: "SansM"; /* Use the imported Persian font */
+  direction: rtl; /* Set the RTL direction */
+}
+.app,
+.content {
+  height: 100%;
+  width: 100%;
+  font-family: "SansM", sans-serif;
+  direction: rtl;
+}
+
+.app {
+  display: flex;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#root{
+  height: 100vh;
+}

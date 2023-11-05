@@ -1,0 +1,13 @@
+
+@font-face {
+    font-family: 'Sans':
+    src: local('IRANSans-web'),
+         url('./fonts/IRANSans-web.woff') format('woff'),
+         url('./fonts/IRANSans-web.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'SansM':
+    src: local('IRANSans-Medium-web'),
+         url('./fonts/IRANSans-Medium-web.woff') format('woff'),
+         url('./fonts/IRANSans-Medium-web.woff2') format('woff2');
+}
