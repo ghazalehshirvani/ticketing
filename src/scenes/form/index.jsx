@@ -5,6 +5,11 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
 import { Select, MenuItem, FormControl, InputLabel, Grid } from "@mui/material";
 import { tokens } from "../../theme";
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import React, { useState } from 'react';
+import './form.css';
+
 
 const Form = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
@@ -14,6 +19,9 @@ const Form = () => {
   };
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  
+  
+  const [value, setValue] = useState('');
   return (
     <Box m="20px" direction="rtl">
       <Header title="ایجاد تیکت جدید" />
@@ -130,24 +138,9 @@ const Form = () => {
               </Box>
             </Box>
             
-            <TextField
-              fullWidth
-              variant="filled"
-              type="text"
-              placeholder="شرح مشکل"
-              onBlur={handleBlur}
-              onChange={handleChange}
-              value={values.address2}
-              name="address2"
-              error={!!touched.address2 && !!errors.address2}
-              helperText={touched.address2 && errors.address2}
-              sx={{ gridColumn: "span 4", fontWeight: "bold" }}
-            />
-            {/* <RichTextEditor
-                label="شرح مشکل"
-                value={richTextValue}
-                onChange={(value) => setRichTextValue(value)}
-              /> */}
+            
+            <ReactQuill theme="snow" value={value} onChange={setValue} placeholder="شرح مساله"  />
+            
             <Box
               display="flex"
               justifyContent="flex-end"
@@ -155,7 +148,7 @@ const Form = () => {
               flexDirection="row-reverse"
             >
               
-              <Button type="submit" color="neutral" variant="contained" sx={{ fontSize: "h3",fontWeight:"bold", padding: "15px 20px" }}>
+              <Button type="submit" color="secondary" variant="contained" sx={{ fontSize: "h3",fontWeight:"bold", padding: "15px 20px" }}>
                 ایجاد تیکت جدید
               </Button>
             </Box>

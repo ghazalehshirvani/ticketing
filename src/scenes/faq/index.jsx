@@ -17,12 +17,20 @@ const FAQ = () => {
       <Accordion defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.greenAccent[500]} variant="h5">
-            سوال
+            حل مشکل اتصال به ریموت دسکتاپ در ویندوز
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            راه حل
+          <Typography >
+          <span style={{ fontWeight: "bold" }}>۱. </span>تنظیمات فایروال را تغییر دهید.
+
+            <br />
+            <br />
+            فایروال ویندوز یکی از رایج ترین دلایل مشکل اتصال به ریموت دسکتاپ است
+            و اگر فایروال سیستم شما RDP را بلاک کند، شما به هیچ وجه نمی توانید
+            به سیستم وریندوز ریموت متصل شوید. مخصوصاً اگر برای اولین بار است که
+            از ریموت دسکتاپ استفاده می کنید، حتماً باید مراحل این روش را طی کنید
+            چون ریموت دسکتاپ به طور پیش فرض در فایروال غیرفعال است. 
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -33,9 +41,7 @@ const FAQ = () => {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            راه حل
-          </Typography>
+          <Typography>راه حل</Typography>
         </AccordionDetails>
       </Accordion>
     </Box>

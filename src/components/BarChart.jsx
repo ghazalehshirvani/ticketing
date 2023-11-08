@@ -39,10 +39,10 @@ const BarChart = ({ isDashboard = false }) => {
           },
         },
       }}
-      keys={["خرابی نرم افزار۱", "خرابی نرم افزار۲", "خرابی نرم افزار۳", "kebab", "fries", "donut"]}
+      keys={["خرابی ۱", "خرابی ۲", "خرابی ۳", "خرابی ۴", "خرابی ۵", "خرابی ۶"]}
       indexBy="country"
-      margin={{ top: 50, right: 130, bottom: 50, left: 130 }}
-      padding={0.6}
+      margin={{ top: 50, right: 150, bottom: 50, left: 130 }}
+      padding={0.7}
       valueScale={{ type: "linear" }}
       indexScale={{ type: "band", round: true }}
       colors={{ scheme: "nivo" }}
@@ -76,21 +76,21 @@ const BarChart = ({ isDashboard = false }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: isDashboard ? undefined : "روز", // changed
+        legend: isDashboard ? undefined : "day", // changed
         legendPosition: "middle",
         legendOffset: 32,
       }}
       axisRight={{
-        tickSize: 5,
-        tickPadding: 5,
+        tickSize: 1,
+        tickPadding: 30,
         tickRotation: 0,
         legend: isDashboard ? undefined : "تعداد تیکت", // changed
-        legendPosition: "middle",
+        legendPosition: "right",
         legendOffset: -40,
       }}
       enableLabel={false}
       labelSkipWidth={12}
-      labelSkipHeight={12}
+      labelSkipHeight={20}
       labelTextColor={{
         from: "color",
         modifiers: [["darker", 1.6]],
@@ -101,9 +101,9 @@ const BarChart = ({ isDashboard = false }) => {
           anchor: "bottom-right",
           direction: "column",
           justify: false,
-          translateX: 40,
+          translateX: 80,
           translateY: 0,
-          itemsSpacing: 2,
+          itemsSpacing: 3,
           itemWidth: 100,
           itemHeight: 20,
           itemDirection: "right-to-left",

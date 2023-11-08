@@ -14,17 +14,34 @@ import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  // const [fariborz, setFariborz] = useState(null);
+  // useEffect(()=>{
+  //   fetch("http://example.com/movies.json")
+  //   .then(e=>e.data)
+  //   .then(e=>{
+  //     if(e.status===200) {
+  //       setFariborz(e.repsonse);
+  //     }
+  //   })
+  //   .catch(()=>console.log('khak bar saret fariborz'))
+  // },[])
+  // useEffect(()=>{
+  //   window.cookie.asghar = fariborz;
+  // },[fariborz])
+
   return (
     <MenuItem
       active={selected === title}
       style={{
         color: colors.grey[100],
-        direction: "right"
+        direction: "right",
       }}
       onClick={() => setSelected(title)}
       icon={icon}
     >
-      <Typography sx={{marginRight: "10px",fontWeight: "bold"}}>{title}</Typography>
+      <Typography sx={{ marginRight: "10px", fontWeight: "bold" }}>
+        {title}
+      </Typography>
       <Link to={to} />
     </MenuItem>
   );
@@ -35,8 +52,6 @@ const Sidebar = () => {
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
-
-  
 
   return (
     <Box
@@ -56,7 +71,7 @@ const Sidebar = () => {
         "& .pro-menu-item.active": {
           color: "#6870fa !important",
         },
-        ".pro-sidebar" : {
+        ".pro-sidebar": {
           position: "relative",
           height: "window.innerHeight",
         },
@@ -80,9 +95,7 @@ const Sidebar = () => {
                 alignItems="center"
                 mr="20px"
               >
-                <Typography variant="h2" color={colors.grey[100]}>
-                  
-                </Typography>
+                <Typography variant="h2" color={colors.grey[100]}></Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
                 </IconButton>
@@ -110,22 +123,25 @@ const Sidebar = () => {
                 >
                   مجتبی وزیری
                 </Typography>
-                <Typography variant="h4" color={"#2A2E36"}>
-                  کارشناس شبکه
+                <Typography variant="h4" color={colors.grey[200]}>
+                  {/* {""#2A2E36"}> "} */}
+                   کارشناس شبکه
                 </Typography>
               </Box>
             </Box>
           )}
-          
-          <Box paddingRight={isCollapsed ? undefined : "10%"} textAlign={"right"}>
 
+          <Box
+            paddingRight={isCollapsed ? undefined : "10%"}
+            textAlign={"right"}
+          >
             <Item
               title="داشبورد"
               to="/"
               icon={<HomeOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />           
+            />
             <Item
               title="اطلاعات اعضا"
               to="/contacts"
@@ -154,7 +170,6 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            
           </Box>
         </Menu>
       </ProSidebar>

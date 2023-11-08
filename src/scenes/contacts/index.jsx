@@ -56,7 +56,7 @@ const Contacts = () => {
     <Box m="20px">
       <Header
         title="کارکنان بخش IT"
-        subtitle="لیست اطلاعات کارمندان برای ارجاع"
+        //subtitle="لیست اطلاعات کارمندان برای ارجاع"
       />
       <Box
         m="40px 0 0 0"
@@ -72,7 +72,7 @@ const Contacts = () => {
             color: colors.greenAccent[300],
           },
           "& .MuiDataGrid-columnHeaders": {
-            backgroundColor: colors.blueAccent[700],
+            backgroundColor: colors.blueAccent[1000],
             borderBottom: "none",
           },
           "& .MuiDataGrid-virtualScroller": {
@@ -80,7 +80,7 @@ const Contacts = () => {
           },
           "& .MuiDataGrid-footerContainer": {
             borderTop: "none",
-            backgroundColor: colors.blueAccent[700],
+            backgroundColor: colors.blueAccent[1000],
           },
           "& .MuiCheckbox-root": {
             color: `${colors.greenAccent[200]} !important`,
